@@ -1,0 +1,20 @@
+# macOS
+.DS_Store
+
+# Local export bundle (duplicate of repo content)
+*.zip
+
+# Private style docs, kept local only
+/guia-estilo-portable.md
+/look-and-feel.md
+
+# Dependencies and build output
+node_modules/
+dist/
+
+# Claude Code / Alfred tooling (local only)
+.claude/
+
+# Internal docs and original source exports (local only)
+/docs/
+/fuente/

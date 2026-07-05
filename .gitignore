@@ -18,3 +18,10 @@ dist/
 # Internal docs and original source exports (local only)
 /docs/
 /fuente/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example

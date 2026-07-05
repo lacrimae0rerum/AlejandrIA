@@ -8,24 +8,23 @@ relacionados orbitando como satélites, conectado por aristas a los conceptos af
 
 | Archivo | Qué es |
 |---|---|
-| `index.html` | **La web completa, autocontenida** (~717 KB). Es el único archivo que necesitas para hostear. Funciona offline. |
-| `index-src.html` | Fuente del anterior antes del empaquetado (requiere `support.js` y `data/` al lado). |
+| `index.html` | **La web.** Requiere `support.js` y `data/` al lado; Three.js se carga desde CDN. |
+| `support.js` | Runtime que monta la página. |
 | `data/concepts-data.js` | Los datos: 30 conceptos, ~454 términos relacionados con definiciones, y las conexiones entre conceptos. Editable a mano. |
-| `AlejandrIA.dc.html` | Fuente original editable en el editor de diseño (junto con `support.js`, en la raíz del proyecto). |
 
 ## Cómo hostearlo (GitHub + Cloudflare Pages)
 
-1. Sube `index.html` a la raíz de tu repositorio.
+1. Sube `index.html`, `support.js` y `data/` a la raíz de tu repositorio.
 2. Cloudflare → **Workers & Pages → Create → Pages → conecta el repo**.
    Sin build command; output directory = raíz.
 3. Añade tu subdominio en **Custom domains**.
 
 ## Funcionalidades
 
-- **Animación de bienvenida** (solo la primera visita): "Bienvenido a AlejandrIA. /
+- **Animación de bienvenida** (en cada visita): "Bienvenido a AlejandrIA. /
   La pequeña biblioteca de términos de IA", con botón **▶ PLAY** (las letras
   convergen en un nodo y de él florece la galaxia) y **SALTAR ≫** para ir directo.
-  Se recuerda en `localStorage`; para volver a verla, abre la web con `#intro=1`.
+  Los enlaces directos con `#n=…` la omiten.
 
 - **Galaxia 3D** (Three.js): arrastra para rotar; rueda del ratón para alejar
   (la vista por defecto es el zoom máximo).
@@ -57,4 +56,4 @@ relacionados orbitando como satélites, conectado por aristas a los conceptos af
 }
 ```
 
-Tras editarlo hay que re-empaquetar `index.html` (o pedírmelo en el proyecto).
+La web lo carga directamente: los cambios se ven al recargar, sin re-empaquetar.

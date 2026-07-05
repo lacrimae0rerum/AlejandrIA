@@ -150,7 +150,6 @@ class Component extends DCLogic {
       try {
         const hp = new URLSearchParams((location.hash || '').replace(/^#/, ''));
         if (hp.get('intro') === '1') return 'ready';
-        if (localStorage.getItem('alejandria_intro_v1')) return null;
         if (hp.get('n')) return null;
       } catch (e) {}
       return 'ready';
